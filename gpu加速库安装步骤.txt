@@ -1,0 +1,35 @@
+
+## 步骤一，安装显卡驱动 (通常可以跳过这一步骤)
+去网站 https://www.nvidia.cn/geforce/drivers
+	根据你到机器选择 GeForce Game Ready 驱动程序 - WHQL，然后下载安装
+
+
+## 步骤二，查看要哪一个版本的CUDA
+安装完成后，在命令行输入 `nvidia-smi ` 查看要安装哪一个版本的CUDA
+	得知 CUDA Version: xx.x
+
+
+## 步骤三，安装CUDA
+去网站 https://developer.nvidia.com/cuda-toolkit-archive
+	根据前面的信息，找到 CUDA Toolkit xx.x.0 ，然后下载安装
+		这一步可跳过。安装完成后，在命令行输入 `nvcc --version` 验证是否安装成功
+
+
+## 步骤四，查看要哪一个版本的CUDNN
+去网站 https://docs.nvidia.com/deeplearning/cudnn/backend/latest/reference/support-matrix.html
+	得知 CUDNN xx.x
+
+
+## 步骤五
+去网站 https://developer.nvidia.com/cudnn-archive ，然后下载安装
+	C:\Program Files\NVIDIA\CUDNN\v9.10\bin\12.9 	内的文件复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.5\bin 目录下
+	C:\Program Files\NVIDIA\CUDNN\v9.10\include 	文件夹复制到   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.5 目录下
+	C:\Program Files\NVIDIA\CUDNN\v9.10\lib 	文件夹复制到   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.5 目录下
+	C:\Program Files\NVIDIA\CUDNN\v9.10\cudnn_samples 文件夹复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.5 目录下
+	
+		这一步可跳过。验证cudnn安装是否成功，到目录下 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.5\extras\demo_suite 输入cmd
+			输入 bandwidthTest.exe 可以看到PASS，输入deviceQuery.exe 可以看到PASS
+
+
+
+
